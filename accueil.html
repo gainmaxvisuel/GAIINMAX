@@ -8,22 +8,18 @@
 </head>
 <body>
 
-    <h1>Bienvenue sur GAINMAX</h1>
+<h2>Bienvenue sur GAINMAX</h2>
 
-    <p>Solde : <span id="solde">0 FCFA</span></p>
+<p>Solde actuel : <span id="solde">0</span> F</p>
 
-    <button id="btnRecharge">Recharger</button>
-    <button id="btnRetrait">Retirer</button>
-    <button id="btnProfil" onclick="window.location.href='moi.html'">Mon Profil</button>
+<div class="menu-bas">
+    <button id="rechargeBtn">Recharger</button>
+    <button id="retraitBtn">Retirer</button>
+    <button id="bonusBtn">Code Bonus</button>
+</div>
 
-    <footer>
-        <button onclick="window.location.href='accueil.html'">Accueil</button>
-        <button onclick="window.location.href='recharge.html'">Recharger</button>
-        <button onclick="window.location.href='retrait.html'">Retirer</button>
-        <button onclick="window.location.href='moi.html'">Profil</button>
-    </footer>
+<script src="supabase.js" defer></script>
+<script src="accueil.js" defer></script>
 
-    <script src="supabase.js" defer></script>
-    <script src="accueil.js" defer></script>
 </body>
 </html>
