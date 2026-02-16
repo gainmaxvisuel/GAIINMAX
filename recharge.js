@@ -1,31 +1,27 @@
-const formRecharge = document.getElementById("rechargeForm");
-const userIdRecharge = localStorage.getItem("userId");
+const formRecharge = document.createElement("form");
+formRecharge.innerHTML = `
+    <label>Montant à recharger :</label>
+    <input type="number" id="montant" required>
+    <button type="submit">Recharger</button>
+`;
+document.body.appendChild(formRecharge);
 
 formRecharge.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const montant = parseInt(document.getElementById("montantRecharge").value);
-    if (!montant || montant <= 0) return alert("Montant invalide");
+    const montant = parseInt(document.getElementById("montant").value);
 
-    // Récupérer le solde actuel
+    if (!userId || montant <= 0) return;
+
     const { data, error } = await supabase
         .from("users")
-        .select("solde")
-        .eq("id", userIdRecharge)
-        .single();
+        .update({ solde: supabase.raw("solde + ?", [montant]) })
+        .eq("id", userId);
 
-    if (error) return alert("Erreur : " + error.message);
-
-    const nouveauSolde = data.solde + montant;
-
-    // Mettre à jour le solde
-    const { error: updateError } = await supabase
-        .from("users")
-        .update({ solde: nouveauSolde })
-        .eq("id", userIdRecharge);
-
-    if (updateError) return alert("Erreur : " + updateError.message);
-
-    alert("Recharge réussie !");
-    window.location.href = "accueil.html";
+    if (error) {
+        alert("Erreur recharge : " + error.message);
+    } else {
+        alert("Recharge effectuée !");
+        window.location.href = "accueil.html";
+    }
 });
