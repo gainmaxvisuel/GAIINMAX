@@ -1,25 +1,34 @@
+// Récupération de l'utilisateur connecté
 const userId = localStorage.getItem("userId");
-const soldeSpan = document.getElementById("solde");
 
-// Afficher le solde actuel
 async function afficherSolde() {
     if (!userId) return;
-    const { data } = await supabase
+
+    const { data, error } = await supabase
         .from("users")
         .select("solde")
         .eq("id", userId)
         .single();
 
-    soldeSpan.textContent = data ? data.solde + " FCFA" : "0 FCFA";
+    if (error) {
+        alert("Erreur lors de la récupération du solde : " + error.message);
+    } else {
+        document.getElementById("solde").innerText = data.solde;
+    }
 }
 
+// Appel initial pour afficher le solde
 afficherSolde();
 
-// Redirections vers recharge/retrait
-document.getElementById("btnRecharge").addEventListener("click", () => {
-    window.location.href = "recharge.html";
+// Gestion des boutons
+document.getElementById("rechargeBtn").addEventListener("click", () => {
+    window.location.href = "recharge.html"; // page recharge
 });
 
-document.getElementById("btnRetrait").addEventListener("click", () => {
-    window.location.href = "retrait.html";
+document.getElementById("retraitBtn").addEventListener("click", () => {
+    window.location.href = "retrait.html"; // page retrait
+});
+
+document.getElementById("bonusBtn").addEventListener("click", () => {
+    window.location.href = "bonus.html"; // page code bonus
 });
