@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAINMAX - Retirer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Retirer votre argent</h1>
+
+    <form id="retraitForm">
+        <label>Montant :</label>
+        <input type="number" id="montantRetrait" required>
+        <button type="submit">Demander retrait</button>
+    </form>
+
+    <button onclick="window.location.href='accueil.html'">Retour</button>
+
+    <footer>
+        <button onclick="window.location.href='accueil.html'">Accueil</button>
+        <button onclick="window.location.href='recharge.html'">Recharger</button>
+        <button onclick="window.location.href='retrait.html'">Retirer</button>
+        <button onclick="window.location.href='moi.html'">Profil</button>
+    </footer>
+
+    <script src="supabase.js" defer></script>
+    <script src="retrait.js" defer></script>
+</body>
+</html>

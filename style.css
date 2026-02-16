@@ -1,0 +1,155 @@
+/* ======== STYLE GÉNÉRAL ======== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #1d3557;
+    margin-top: 20px;
+}
+
+p {
+    text-align: center;
+    color: #333;
+}
+
+a {
+    color: #e63946;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ======== FORMULAIRES ======== */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #1d3557;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #457b9d;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #1d3557;
+}
+
+/* ======== BOUTONS ======== */
+button {
+    padding: 12px 20px;
+    margin: 10px;
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #a4161a;
+}
+
+/* ======== ESPACE CENTRAL ======== */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* ======== SOLDE ======== */
+#solde, #soldeUtilisateur {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2a9d8f;
+}
+
+/* ======== HISTORIQUE ======== */
+#historiqueTransactions {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ======== MENU FIXE EN BAS ======== */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1d3557;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 0;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+footer button {
+    background-color: #e63946;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+footer button:hover {
+    background-color: #a4161a;
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 480px) {
+    form {
+        width: 90%;
+        padding: 15px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #historiqueTransactions {
+        width: 90%;
+        padding: 8px;
+    }
+}

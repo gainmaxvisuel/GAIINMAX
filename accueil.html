@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAINMAX - Accueil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Bienvenue sur GAINMAX</h1>
+
+    <p>Solde : <span id="solde">0 FCFA</span></p>
+
+    <button id="btnRecharge">Recharger</button>
+    <button id="btnRetrait">Retirer</button>
+    <button id="btnProfil" onclick="window.location.href='moi.html'">Mon Profil</button>
+
+    <footer>
+        <button onclick="window.location.href='accueil.html'">Accueil</button>
+        <button onclick="window.location.href='recharge.html'">Recharger</button>
+        <button onclick="window.location.href='retrait.html'">Retirer</button>
+        <button onclick="window.location.href='moi.html'">Profil</button>
+    </footer>
+
+    <script src="supabase.js" defer></script>
+    <script src="accueil.js" defer></script>
+</body>
+</html>

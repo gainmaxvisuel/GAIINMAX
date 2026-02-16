@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAINMAX - Mon Profil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Mon Profil</h1>
+
+    <p>Nom : <span id="nomUtilisateur"></span></p>
+    <p>Email : <span id="emailUtilisateur"></span></p>
+    <p>Solde : <span id="soldeUtilisateur"></span></p>
+
+    <h2>Historique des transactions</h2>
+    <div id="historiqueTransactions"></div>
+
+    <button onclick="window.location.href='accueil.html'">Retour</button>
+
+    <footer>
+        <button onclick="window.location.href='accueil.html'">Accueil</button>
+        <button onclick="window.location.href='recharge.html'">Recharger</button>
+        <button onclick="window.location.href='retrait.html'">Retirer</button>
+        <button onclick="window.location.href='moi.html'">Profil</button>
+    </footer>
+
+    <script src="supabase.js" defer></script>
+    <script src="moi.js" defer></script>
+</body>
+</html>

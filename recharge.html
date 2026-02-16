@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAINMAX - Recharger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Recharger votre compte</h1>
+
+    <form id="rechargeForm">
+        <label>Montant :</label>
+        <input type="number" id="montantRecharge" required>
+        <button type="submit">Confirmer la recharge</button>
+    </form>
+
+    <button onclick="window.location.href='accueil.html'">Retour</button>
+
+    <footer>
+        <button onclick="window.location.href='accueil.html'">Accueil</button>
+        <button onclick="window.location.href='recharge.html'">Recharger</button>
+        <button onclick="window.location.href='retrait.html'">Retirer</button>
+        <button onclick="window.location.href='moi.html'">Profil</button>
+    </footer>
+
+    <script src="supabase.js" defer></script>
+    <script src="recharge.js" defer></script>
+</body>
+</html>
