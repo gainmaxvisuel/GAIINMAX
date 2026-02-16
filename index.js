@@ -1,20 +1,18 @@
-const formInscription = document.getElementById("inscriptionForm");
+const form = document.getElementById("inscriptionForm");
 
-formInscription.addEventListener("submit", async (e) => {
-    e.preventDefault();
+form.addEventListener("submit", async (e) => {
+  e.preventDefault(); // empêche la page de se recharger
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
 
-    const nom = document.getElementById("nom").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+  const { data, error } = await supabase
+    .from("users")
+    .insert([{ username: username, password: password, solde: 1000 }]);
 
-    const { data, error } = await supabase
-        .from("users")
-        .insert([{ nom, email, password, solde: 1000 }]); // bonus initial 1000 FCFA
-
-    if (error) {
-        alert("Erreur : " + error.message);
-    } else {
-        alert("Inscription réussie !");
-        window.location.href = "connexion.html";
-    }
+  if (error) {
+    alert("Erreur : " + error.message);
+  } else {
+    alert("Compte créé avec succès !");
+    window.location.href = "connexion.html"; // redirection après inscription
+  }
 });
